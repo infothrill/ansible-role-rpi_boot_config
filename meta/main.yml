@@ -1,6 +1,6 @@
 galaxy_info:
   author: Paul Kremer
-  description: Installs cherrymusic
+  description: Configure raspberry pi /boot/config.txt
   company: Snakeoil
 
   license: BSD
@@ -103,8 +103,8 @@ galaxy_info:
   #  - 9.1
   #  - 9.2
   #  - 9.3
-  - name: Ubuntu
-    versions:
+  #- name: Ubuntu
+  #  versions:
   #  - all
   #  - lucid
   #  - maverick
@@ -114,7 +114,7 @@ galaxy_info:
   #  - quantal
   #  - raring
   #  - saucy
-    - trusty
+  #  - trusty
   #  - utopic
   #  - vivid
   #  - wily
@@ -136,8 +136,8 @@ galaxy_info:
   #  versions:
   #  - all
   #  - any
-  #- name: Debian
-  #  versions:
+  - name: Debian
+    versions:
   #  - all
   #  - etch
   #  - jessie
@@ -145,9 +145,9 @@ galaxy_info:
   #  - sid
   #  - squeeze
   #  - stretch
-  #  - wheezy
+    - wheezy
 
   galaxy_tags:
-    - cherrymusic
+    - raspberrypi
 
 dependencies: []
