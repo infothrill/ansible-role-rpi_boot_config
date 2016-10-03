@@ -1,0 +1,52 @@
+---
+sudo: required
+dist: trusty
+
+language: python
+python: "2.7"
+
+env:
+  - ANSIBLE_VERSION=latest
+  - ANSIBLE_VERSION=2.1.1.0
+  - ANSIBLE_VERSION=2.1.0.0
+  - ANSIBLE_VERSION=2.0.2.0
+  - ANSIBLE_VERSION=2.0.1.0
+  - ANSIBLE_VERSION=2.0.0.2
+  - ANSIBLE_VERSION=2.0.0.1
+  - ANSIBLE_VERSION=2.0.0.0
+  - ANSIBLE_VERSION=1.9.6
+  - ANSIBLE_VERSION=1.9.5
+  - ANSIBLE_VERSION=1.9.4
+  - ANSIBLE_VERSION=1.9.3
+  - ANSIBLE_VERSION=1.9.2
+  - ANSIBLE_VERSION=1.9.1
+  - ANSIBLE_VERSION=1.9.0.1
+
+# Install ansible
+addons:
+  apt:
+    packages:
+    - python-pip
+
+before_install:
+  - sudo apt-get update -qq
+
+install:
+  # Install ansible and linter
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install --no-binary ansible ansible; else pip install --no-binary ansible ansible==$ANSIBLE_VERSION; fi
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint==3.2.5; fi
+
+  # Double check version
+  - ansible --version
+
+  # Create ansible.cfg with correct roles_path
+  - printf '[defaults]\nroles_path=../' >ansible.cfg
+
+script:
+  # Basic role syntax check
+  - ansible-playbook tests/test.yml -i tests/inventory --syntax-check
+  # Ansible lint
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then ansible-lint tests/test.yml; fi
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
