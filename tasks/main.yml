@@ -1,3 +1,5 @@
+---
+# tasks file for rpi-boot-config
 - name: "adjust /boot/config.txt"
   lineinfile: line='{{ item.key }}={{ item.value }}'
     dest=/boot/config.txt
@@ -13,6 +15,6 @@
   when: _boot_config.changed
 
 - name: waiting for machine to come back
-  local_action: wait_for port=22 host="{{ hostvars[inventory_hostname]['ansible_host'] }}" delay=20 timeout=120
+  local_action: wait_for port=22 host="{{ ansible_host }}" delay=20 timeout=120
   become: false
   when: _boot_config.changed
