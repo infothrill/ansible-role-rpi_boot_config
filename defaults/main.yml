@@ -1,2 +1,4 @@
+---
+# defaults for rpi-boot-config
 boot_config: {}
 #  gpu_mem: 64

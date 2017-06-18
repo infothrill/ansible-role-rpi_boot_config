@@ -7,20 +7,11 @@ python: "2.7"
 
 env:
   - ANSIBLE_VERSION=latest
-  - ANSIBLE_VERSION=2.1.1.0
-  - ANSIBLE_VERSION=2.1.0.0
+  - ANSIBLE_VERSION=2.3.1.0
+  - ANSIBLE_VERSION=2.2.3.0
+  - ANSIBLE_VERSION=2.1.6.0
   - ANSIBLE_VERSION=2.0.2.0
-  - ANSIBLE_VERSION=2.0.1.0
-  - ANSIBLE_VERSION=2.0.0.2
-  - ANSIBLE_VERSION=2.0.0.1
-  - ANSIBLE_VERSION=2.0.0.0
   - ANSIBLE_VERSION=1.9.6
-  - ANSIBLE_VERSION=1.9.5
-  - ANSIBLE_VERSION=1.9.4
-  - ANSIBLE_VERSION=1.9.3
-  - ANSIBLE_VERSION=1.9.2
-  - ANSIBLE_VERSION=1.9.1
-  - ANSIBLE_VERSION=1.9.0.1
 
 # Install ansible
 addons:
@@ -34,7 +25,7 @@ before_install:
 install:
   # Install ansible and linter
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install --no-binary ansible ansible; else pip install --no-binary ansible ansible==$ANSIBLE_VERSION; fi
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint==3.2.5; fi
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint==3.4.13; fi
 
   # Double check version
   - ansible --version
