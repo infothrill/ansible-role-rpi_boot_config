@@ -7,7 +7,7 @@ python: "2.7"
 
 env:
   - ANSIBLE_VERSION=latest
-  - ANSIBLE_VERSION=2.3.1.0
+  - ANSIBLE_VERSION=2.3.2.0
   - ANSIBLE_VERSION=2.2.3.0
   - ANSIBLE_VERSION=2.1.6.0
   - ANSIBLE_VERSION=2.0.2.0
@@ -25,7 +25,7 @@ before_install:
 install:
   # Install ansible and linter
   - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install --no-binary ansible ansible; else pip install --no-binary ansible ansible==$ANSIBLE_VERSION; fi
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint==3.4.13; fi
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint==3.4.15; fi
 
   # Double check version
   - ansible --version
