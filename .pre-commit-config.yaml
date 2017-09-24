@@ -8,7 +8,7 @@
     - id: forbid-new-submodules
     - id: trailing-whitespace
 - repo: https://github.com/willthames/ansible-lint.git
-  sha: v3.4.13
+  sha: v3.4.15
   hooks:
     - id: ansible-lint
       files: \.(yaml|yml)$
