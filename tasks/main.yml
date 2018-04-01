@@ -1,20 +1,30 @@
 ---
 # tasks file for rpi-boot-config
-- name: "adjust /boot/config.txt"
-  lineinfile: line='{{ item.key }}={{ item.value }}'
-    dest=/boot/config.txt
-    regexp="^{{ item.key }}="
+- name: "adjust /boot/config.txt based on boot_config"
+  lineinfile:
+    line: '{{ item.key }}={{ item.value }}'
+    dest: /boot/config.txt
+    regexp: "^{{ item.key }}="
   with_dict: '{{ boot_config }}'
   register: _boot_config
+
+- name: "adjust /boot/config.txt based on boot_config_lines"
+  lineinfile:
+    line: '{{ item }}'
+    dest: /boot/config.txt
+    regexp: "^{{ item }}"
+  with_items: '{{ boot_config_lines }}'
+  register: _boot_config_lines
 
 - name: restart machine
   shell: sleep 2 && shutdown -r now "/boot/config.txt config changed"
   async: 1
   poll: 0
   ignore_errors: true
-  when: _boot_config.changed
+  when: _boot_config.changed or _boot_config_lines.changed
+
 
 - name: waiting for machine to come back
-  local_action: wait_for port=22 host="{{ ansible_host }}" delay=20 timeout=120
+  local_action: wait_for port=22 host="{{ ansible_host|default(inventory_hostname) }}" delay=20 timeout=120
   become: false
-  when: _boot_config.changed
+  when: _boot_config.changed or _boot_config_lines.changed
