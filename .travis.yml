@@ -18,7 +18,7 @@ env:
 addons:
   apt:
     packages:
-    - python-pip
+      - python-pip
 
 before_install:
   - sudo apt-get update -qq

@@ -1,0 +1,7 @@
+---
+# Pyup configuration
+branch: 'develop'
+
+requirements:
+  - 'requirements.txt'
+  - 'tox.ini'
