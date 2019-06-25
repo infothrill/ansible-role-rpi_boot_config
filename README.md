@@ -54,6 +54,12 @@ None.
 
 ## Changelog
 
+### 1.1.1
+
+* introduce semver release numbering
+* expand tested OS to raspbian jessie, buster
+* switch to molecule testing framework
+
 ### 1.1
 * added new, optional variable `boot_config_lines`
 
