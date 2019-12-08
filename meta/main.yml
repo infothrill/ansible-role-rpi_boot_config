@@ -6,7 +6,7 @@ galaxy_info:
 
   license: BSD
 
-  min_ansible_version: 1.9
+  min_ansible_version: 2.5
 
   platforms:
     - name: Debian
@@ -14,9 +14,9 @@ galaxy_info:
         - buster
         - jessie
         - stretch
-        - wheezy
 
   galaxy_tags:
     - raspberrypi
+    - raspbian
 
 dependencies: []
