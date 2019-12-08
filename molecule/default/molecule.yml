@@ -8,6 +8,8 @@ driver:
 lint:
   name: yamllint
 platforms:
+  - name: rpibootconfig-debian-buster
+    image: debian:buster
   - name: rpibootconfig-debian-stretch
     image: debian:stretch
   - name: rpibootconfig-debian-jessie

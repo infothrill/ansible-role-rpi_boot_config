@@ -5,13 +5,13 @@ services:
 language: python
 
 python:
-  - "2.7"
+  - "3.6"
 env:
-  - ANSIBLE="2.4"
   - ANSIBLE="2.5"
   - ANSIBLE="2.6"
   - ANSIBLE="2.7"
   - ANSIBLE="2.8"
+  - ANSIBLE="2.9"
 install: pip install tox-travis
 script: tox
 

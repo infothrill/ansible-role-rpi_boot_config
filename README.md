@@ -54,6 +54,13 @@ None.
 
 ## Changelog
 
+### 2.0.0
+
+* drop support for python2
+* add support for ansible 2.9
+* add support for debian buster
+* upgraded ansible-lint
+
 ### 1.1.1
 
 * introduce semver release numbering
