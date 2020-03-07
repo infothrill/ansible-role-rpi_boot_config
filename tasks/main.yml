@@ -16,21 +16,8 @@
   with_items: '{{ boot_config_lines }}'
   register: _boot_config_lines
 
-- name: restart machine  # noqa 503
-  shell: sleep 2 && shutdown -r now "/boot/config.txt config changed"
-  async: 1
-  poll: 0
-  ignore_errors: true
-  when: _boot_config.changed or _boot_config_lines.changed
-
-
-- name: waiting for machine to come back  # noqa 503
-  delegate_to: localhost
-  connection: local
-  wait_for:
-    port: 22
-    host: "{{ ansible_ssh_host|default(ansible_host)|default(inventory_hostname) }}"
-    delay: 20
-    timeout: 120
-  become: false
+- name: "restart machine"  # noqa 503
+  reboot:
+    msg: "Reboot by Ansible, because /boot/config.txt config changed."
+    reboot_timeout: 300   # (= 5 minutes)
   when: _boot_config.changed or _boot_config_lines.changed
