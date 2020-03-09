@@ -6,10 +6,7 @@
 [![Ansible Role](https://img.shields.io/ansible/role/12477.svg)](https://galaxy.ansible.com/infothrill/rpi-boot-config/)
 
 
-Minimal role to manage config entries in a Raspberry PI [boot config](http://www.raspberrypi.org/documentation/configuration/config-txt.md). After changing the boot config, it will restart the raspberry pi and wait for it to come back. This requires either the `inventory_hostname` is resolvable or that the `ansible_host` is set correctly in the inventory:
-
-	[all]
-	raspberry ansible_host=192.168.1.101
+Minimal role to manage config entries in a Raspberry PI [boot config](http://www.raspberrypi.org/documentation/configuration/config-txt.md). After changing the boot config, it will restart the raspberry pi and wait for it to come back.
 
 
 ## Requirements
@@ -53,6 +50,11 @@ None.
 	      - { role: rpi_boot_config, boot_config_lines: ['gpu_mem=196'] }
 
 ## Changelog
+
+### 3.0.0
+
+* use ansible `reboot` module
+* drop support for ansible 2.5, 2.6
 
 ### 2.0.0
 
