@@ -54,6 +54,7 @@ None.
 ### 4.0.0
 
 * renamed role to `rpi_boot_config`
+* drop support for ansible 2.7
 
 ### 3.0.0
 
