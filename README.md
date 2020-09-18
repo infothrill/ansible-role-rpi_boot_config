@@ -1,9 +1,9 @@
-# Ansible role: rpi-boot-config
+# Ansible role: rpi_boot_config
 
-[![Build Status](https://img.shields.io/travis/infothrill/ansible-role-rpi-boot-config/master.svg?label=travis_master)](https://travis-ci.org/infothrill/ansible-role-rpi-boot-config)
-[![Build Status](https://img.shields.io/travis/infothrill/ansible-role-rpi-boot-config/develop.svg?label=travis_develop)](https://travis-ci.org/infothrill/ansible-role-rpi-boot-config)
-[![Updates](https://pyup.io/repos/github/infothrill/ansible-role-rpi-boot-config/shield.svg)](https://pyup.io/repos/github/infothrill/ansible-role-rpi-boot-config/)
-[![Ansible Role](https://img.shields.io/ansible/role/12477.svg)](https://galaxy.ansible.com/infothrill/rpi-boot-config/)
+[![Build Status](https://img.shields.io/travis/infothrill/ansible-role-rpi_boot_config/master.svg?label=travis_master)](https://travis-ci.org/infothrill/ansible-role-rpi_boot_config)
+[![Build Status](https://img.shields.io/travis/infothrill/ansible-role-rpi_boot_config/develop.svg?label=travis_develop)](https://travis-ci.org/infothrill/ansible-role-rpi_boot_config)
+[![Updates](https://pyup.io/repos/github/infothrill/ansible-role-rpi_boot_config/shield.svg)](https://pyup.io/repos/github/infothrill/ansible-role-rpi_boot_config/)
+[![Ansible Role](https://img.shields.io/ansible/role/12477.svg)](https://galaxy.ansible.com/infothrill/rpi_boot_config/)
 
 
 Minimal role to manage config entries in a Raspberry PI [boot config](http://www.raspberrypi.org/documentation/configuration/config-txt.md). After changing the boot config, it will restart the raspberry pi and wait for it to come back.
@@ -50,6 +50,10 @@ None.
 	      - { role: rpi_boot_config, boot_config_lines: ['gpu_mem=196'] }
 
 ## Changelog
+
+### 4.0.0
+
+* renamed role to `rpi_boot_config`
 
 ### 3.0.0
 

@@ -1,5 +1,5 @@
 ---
-# tasks file for rpi-boot-config
+# tasks file for rpi_boot_config
 - name: "adjust /boot/config.txt based on boot_config"
   lineinfile:
     line: '{{ item.key }}={{ item.value }}'
