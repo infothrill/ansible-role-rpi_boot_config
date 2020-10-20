@@ -51,6 +51,10 @@ None.
 
 ## Changelog
 
+### 4.0.1
+
+* upgraded molecule to versioin 3.x
+
 ### 4.0.0
 
 * renamed role to `rpi_boot_config`
