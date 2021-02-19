@@ -51,9 +51,13 @@ None.
 
 ## Changelog
 
+### 4.0.2
+
+* upgraded CI tests to use python3.7+
+
 ### 4.0.1
 
-* upgraded molecule to versioin 3.x
+* upgraded molecule to version 3.x
 
 ### 4.0.0
 

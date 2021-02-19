@@ -5,13 +5,15 @@ services:
 language: python
 
 python:
-  - "3.6"
+  - "3.7"
+  - "3.8"
+  - "3.9"
 env:
   - ANSIBLE="2.8"
   - ANSIBLE="2.9"
   - ANSIBLE="2.10"
 before_install:
-  - python -m pip install --upgrade pip
+  - python -m pip install --upgrade wheel
 install: pip install tox-travis
 script: tox
 
