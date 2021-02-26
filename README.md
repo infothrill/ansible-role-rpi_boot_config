@@ -51,13 +51,11 @@ None.
 
 ## Changelog
 
-### 4.0.2
+### 4.0.x
 
 * upgraded CI tests to use python3.7+
-
-### 4.0.1
-
 * upgraded molecule to version 3.x
+* drop support for ansible 2.8
 
 ### 4.0.0
 
