@@ -1,23 +1,23 @@
 ---
 # tasks file for rpi_boot_config
-- name: "adjust /boot/config.txt based on boot_config"
+- name: "adjust {{ rpi_boot_config_file }} based on boot_config"
   lineinfile:
     line: '{{ item.key }}={{ item.value }}'
-    dest: /boot/config.txt
+    dest: "{{ rpi_boot_config_file }}"
     regexp: "^{{ item.key }}="
   with_dict: '{{ boot_config }}'
   register: _boot_config
 
-- name: "adjust /boot/config.txt based on boot_config_lines"
+- name: "adjust {{ rpi_boot_config_file }} based on boot_config_lines"
   lineinfile:
     line: '{{ item }}'
-    dest: /boot/config.txt
+    dest: "{{ rpi_boot_config_file }}"
     regexp: "^{{ item }}"
   with_items: '{{ boot_config_lines }}'
   register: _boot_config_lines
 
 - name: "restart machine"  # noqa 503
   reboot:
-    msg: "Reboot by Ansible, because /boot/config.txt config changed."
+    msg: "Reboot by Ansible, because {{ rpi_boot_config_file }} config changed."
     reboot_timeout: 300   # (= 5 minutes)
   when: _boot_config.changed or _boot_config_lines.changed

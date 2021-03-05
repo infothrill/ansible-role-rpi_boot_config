@@ -38,6 +38,13 @@ boot_config:
 	gpu_mem: '196'
 ```
 
+**rpi\_boot\_config\_file**, optional
+
+Path of the Raspberry Pi boot configuration file to manage, default: `/boot/config.txt`. Example:
+
+```
+rpi_boot_config_file: /boot/config.txt
+```
 
 ## Dependencies
 
@@ -56,6 +63,7 @@ None.
 * upgraded CI tests to use python3.7+
 * upgraded molecule to version 3.x
 * drop support for ansible 2.8
+* add configurable path to boot config file
 
 ### 4.0.0
 
