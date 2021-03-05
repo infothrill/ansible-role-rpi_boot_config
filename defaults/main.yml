@@ -1,6 +1,9 @@
 ---
 # defaults for rpi-boot-config
 
+# Path to the Raspberry Pi boot configuration file
+rpi_boot_config_file: /boot/config.txt
+
 boot_config: {}
 #  gpu_mem: 64
 
