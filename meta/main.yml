@@ -2,12 +2,12 @@
 galaxy_info:
   author: Paul Kremer
   role_name: rpi_boot_config
-  description: Configure raspberry pi /boot/config.txt
+  description: Configure raspberry pi boot config.txt
   company: Snakeoil
 
-  license: BSD
+  license: MIT
 
-  min_ansible_version: 2.7
+  min_ansible_version: 2.8
 
   platforms:
     - name: Debian
@@ -19,5 +19,6 @@ galaxy_info:
   galaxy_tags:
     - raspberrypi
     - raspbian
+    - raspi
 
 dependencies: []
