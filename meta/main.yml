@@ -2,6 +2,7 @@
 galaxy_info:
   author: Paul Kremer
   role_name: rpi_boot_config
+  namespace: infothrill
   description: Configure raspberry pi boot config.txt
   company: Snakeoil
 
