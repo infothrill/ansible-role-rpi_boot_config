@@ -25,5 +25,5 @@ jobs:
           pip install tox tox-gh-actions
       - name: Test with tox
         run: tox
-        with:
+        env:
           ANSBILE: ${{ matrix.ansible-version }}
