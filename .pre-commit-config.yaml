@@ -1,6 +1,6 @@
 ---
 - repo: git@github.com:pre-commit/pre-commit-hooks
-  sha: v1.2.3
+  rev: v1.2.3
   hooks:
     - id: check-case-conflict
     - id: check-byte-order-marker
