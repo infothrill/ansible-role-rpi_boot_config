@@ -27,3 +27,4 @@ jobs:
         run: tox
         env:
           ANSIBLE: ${{ matrix.ansible-version }}
+          PYTHON: ${{ matrix.python-version }}
