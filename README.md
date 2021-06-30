@@ -58,6 +58,11 @@ None.
 
 ## Changelog
 
+### 4.2.0
+
+* moved CI to Github Actions
+* drop support for ansible 2.9, python3.7
+
 ### 4.1.0
 
 * upgraded CI tests to use python3.7+

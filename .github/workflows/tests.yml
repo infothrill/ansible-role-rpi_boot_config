@@ -9,9 +9,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        python-version: [3.7, 3.8, 3.9]
-        ansible-version: ['2.9', '2.10', '3.0']
+        python-version: [3.8, 3.9]
+        ansible-version: ['2.10', '3', '4']
 
     steps:
       - uses: actions/checkout@v2
