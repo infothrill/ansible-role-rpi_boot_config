@@ -1,8 +1,6 @@
 # Ansible role: rpi_boot_config
 
-[![Build Status](https://img.shields.io/travis/infothrill/ansible-role-rpi_boot_config/master.svg?label=travis_master)](https://travis-ci.org/infothrill/ansible-role-rpi_boot_config)
-[![Build Status](https://img.shields.io/travis/infothrill/ansible-role-rpi_boot_config/develop.svg?label=travis_develop)](https://travis-ci.org/infothrill/ansible-role-rpi_boot_config)
-[![Updates](https://pyup.io/repos/github/infothrill/ansible-role-rpi_boot_config/shield.svg)](https://pyup.io/repos/github/infothrill/ansible-role-rpi_boot_config/)
+![Build status](https://github.com/infothrill/ansible-role-rpi_boot_config/actions/workflows/tests.yml/badge.svg)
 [![Ansible Role](https://img.shields.io/ansible/role/50818.svg)](https://galaxy.ansible.com/infothrill/rpi_boot_config/)
 
 
