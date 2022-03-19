@@ -1,14 +1,12 @@
 ---
-dependency:
-  name: galaxy
-  options:
-    role-file: requirements.yml
 driver:
   name: docker
 lint: |
   yamllint .
   ansible-lint --exclude molecule
 platforms:
+  - name: rpibootconfig-debian-11-bullseye
+    image: debian:bullseye
   - name: rpibootconfig-debian-buster
     image: debian:buster
   - name: rpibootconfig-debian-stretch
