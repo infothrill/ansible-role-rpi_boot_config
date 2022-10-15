@@ -1,14 +1,15 @@
 ---
-- repo: git@github.com:pre-commit/pre-commit-hooks
-  sha: v1.2.3
-  hooks:
-    - id: check-case-conflict
-    - id: check-byte-order-marker
-    - id: check-symlinks
-    - id: forbid-new-submodules
-    - id: trailing-whitespace
-    - id: fix-encoding-pragma
-- repo: https://github.com/adrienverge/yamllint.git
-  sha: v1.11.1
-  hooks:
-    - id: yamllint
+repos:
+  - repo: git@github.com:pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-case-conflict
+      - id: check-byte-order-marker
+      - id: check-symlinks
+      - id: forbid-new-submodules
+      - id: trailing-whitespace
+      - id: fix-encoding-pragma
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.26.3
+    hooks:
+      - id: yamllint

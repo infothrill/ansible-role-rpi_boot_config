@@ -6,3 +6,5 @@ rules:
 
 ignore: |
   .tox
+  .cache
+  .github

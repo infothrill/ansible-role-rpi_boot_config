@@ -1,8 +1,6 @@
 # Ansible role: rpi_boot_config
 
-[![Build Status](https://img.shields.io/travis/infothrill/ansible-role-rpi_boot_config/master.svg?label=travis_master)](https://travis-ci.org/infothrill/ansible-role-rpi_boot_config)
-[![Build Status](https://img.shields.io/travis/infothrill/ansible-role-rpi_boot_config/develop.svg?label=travis_develop)](https://travis-ci.org/infothrill/ansible-role-rpi_boot_config)
-[![Updates](https://pyup.io/repos/github/infothrill/ansible-role-rpi_boot_config/shield.svg)](https://pyup.io/repos/github/infothrill/ansible-role-rpi_boot_config/)
+![Build status](https://github.com/infothrill/ansible-role-rpi_boot_config/actions/workflows/tests.yml/badge.svg)
 [![Ansible Role](https://img.shields.io/ansible/role/50818.svg)](https://galaxy.ansible.com/infothrill/rpi_boot_config/)
 
 
@@ -57,6 +55,17 @@ None.
 	      - { role: rpi_boot_config, boot_config_lines: ['gpu_mem=196'] }
 
 ## Changelog
+
+### 4.3.0
+
+* drop support for ansible older than 5.0
+* add test for Debian `bullseye`
+
+
+### 4.2.0
+
+* moved CI to Github Actions
+* drop support for ansible 2.9, python3.7
 
 ### 4.1.0
 
