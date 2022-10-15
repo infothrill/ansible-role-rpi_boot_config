@@ -56,6 +56,12 @@ None.
 
 ## Changelog
 
+### 4.3.0
+
+* drop support for ansible older than 5.0
+* add test for Debian `bullseye`
+
+
 ### 4.2.0
 
 * moved CI to Github Actions

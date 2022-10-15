@@ -8,11 +8,12 @@ galaxy_info:
 
   license: MIT
 
-  min_ansible_version: 2.8
+  min_ansible_version: "5.0"
 
   platforms:
     - name: Debian
       versions:
+        - bullseye
         - buster
         - jessie
         - stretch

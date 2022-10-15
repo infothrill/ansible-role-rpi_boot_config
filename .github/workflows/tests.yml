@@ -11,8 +11,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [3.8, 3.9]
-        ansible-version: ['4', '5']
+        python-version: ['3.8', '3.9', '3.10']
+        ansible-version: ['5', '6']
 
     steps:
       - uses: actions/checkout@v3
