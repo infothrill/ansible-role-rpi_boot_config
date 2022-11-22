@@ -11,8 +11,6 @@ platforms:
     image: debian:buster
   - name: rpibootconfig-debian-stretch
     image: debian:stretch
-  - name: rpibootconfig-debian-jessie
-    image: debian:jessie
 provisioner:
   name: ansible
 scenario:

@@ -3,9 +3,10 @@
 ![Build status](https://github.com/infothrill/ansible-role-rpi_boot_config/actions/workflows/tests.yml/badge.svg)
 [![Ansible Role](https://img.shields.io/ansible/role/50818.svg)](https://galaxy.ansible.com/infothrill/rpi_boot_config/)
 
-
-Minimal role to manage config entries in a Raspberry PI [boot config](http://www.raspberrypi.org/documentation/configuration/config-txt.md). After changing the boot config, it will restart the raspberry pi and wait for it to come back.
-
+Minimal role to manage config entries in a Raspberry PI
+[boot config](http://www.raspberrypi.org/documentation/configuration/config-txt.md).
+After changing the boot config, it will restart the raspberry pi and wait for
+it to come back.
 
 ## Requirements
 
@@ -17,30 +18,32 @@ Available variables are listed below, along with default values (see defaults/ma
 
 **boot\_config\_lines**, optional
 
-List of verbatim config lines to be put into `/boot/config.txt` (no assertions about uniqueness are made). Example:
+List of verbatim config lines to be put into `/boot/config.txt` (no assertions
+about uniqueness are made). Example:
 
-```
+```yaml
 boot_config_lines:
-	- "gpu_mem=196"
-	- "dtoverlay=pi3-disable-wifi"
-	- "dtoverlay=pi3-disable-bt"
+    - "gpu_mem=196"
+    - "dtoverlay=pi3-disable-wifi"
+    - "dtoverlay=pi3-disable-bt"
 ```
-
 
 **boot\_config**, optional
 
-Dictionary where every key translates to a unique setting in `/boot/config.txt`. Example:
+Dictionary where every key translates to a unique setting in `/boot/config.txt`.
+Example:
 
-```
+```yaml
 boot_config:
-	gpu_mem: '196'
+    gpu_mem: '196'
 ```
 
 **rpi\_boot\_config\_file**, optional
 
-Path of the Raspberry Pi boot configuration file to manage, default: `/boot/config.txt`. Example:
+Path of the Raspberry Pi boot configuration file to manage, default:
+`/boot/config.txt`. Example:
 
-```
+```yaml
 rpi_boot_config_file: /boot/config.txt
 ```
 
@@ -50,17 +53,22 @@ None.
 
 ## Example Playbook
 
-    - hosts: raspberrypis
-      roles:
-	      - { role: rpi_boot_config, boot_config_lines: ['gpu_mem=196'] }
+```yaml
+- hosts: raspberrypis
+  roles:
+      - { role: rpi_boot_config, boot_config_lines: ['gpu_mem=196'] }
+```
 
 ## Changelog
+
+### xxxx
+
+* drop support for Debian `jessie`
 
 ### 4.3.0
 
 * drop support for ansible older than 5.0
 * add test for Debian `bullseye`
-
 
 ### 4.2.0
 
@@ -98,11 +106,12 @@ None.
 * switch to molecule testing framework
 
 ### 1.1
+
 * added new, optional variable `boot_config_lines`
 
 ### 1.0
-* initial release
 
+* initial release
 
 ## License
 
@@ -111,4 +120,3 @@ MIT / BSD
 ## Author Information
 
 This role was created in 2016 by Paul Kremer.
-

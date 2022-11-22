@@ -15,7 +15,6 @@ galaxy_info:
       versions:
         - bullseye
         - buster
-        - jessie
         - stretch
 
   galaxy_tags:
