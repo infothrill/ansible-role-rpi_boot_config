@@ -63,6 +63,8 @@ None.
 
 ### xxxx
 
+* add ansible 7, python 3.11
+* drop ansible 5, python 3.8
 * drop support for Debian `jessie`
 
 ### 4.3.0
