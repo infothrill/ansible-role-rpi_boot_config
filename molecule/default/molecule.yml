@@ -9,8 +9,6 @@ platforms:
     image: debian:bullseye
   - name: rpibootconfig-debian-buster
     image: debian:buster
-  - name: rpibootconfig-debian-stretch
-    image: debian:stretch
 provisioner:
   name: ansible
 scenario:
