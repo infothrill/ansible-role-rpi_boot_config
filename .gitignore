@@ -1,4 +1,6 @@
 .cache
+.ansible
+.python-version
 .venv
 .vagrant
 .molecule
