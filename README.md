@@ -61,7 +61,7 @@ None.
 
 ## Changelog
 
-### 4.4.0 TBD
+### 4.4.0
 
 * Add new role variable `rpi_boot_config_reboot: bool`
 * Update molecule and CI testing
