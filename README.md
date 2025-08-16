@@ -41,10 +41,22 @@ boot_config:
 **rpi\_boot\_config\_file**, optional
 
 Path of the Raspberry Pi boot configuration file to manage, default:
-`/boot/config.txt`. Example:
+`/boot/config.txt`.
+Example:
 
 ```yaml
 rpi_boot_config_file: /boot/config.txt
+```
+
+**rpi\_boot\_config\_reboot**, optional
+
+Boolean to specify if a reboot should be performed if the config changes
+(default: true).
+`/boot/config.txt`.
+Example:
+
+```yaml
+rpi_boot_config_reboot: false
 ```
 
 ## Dependencies
