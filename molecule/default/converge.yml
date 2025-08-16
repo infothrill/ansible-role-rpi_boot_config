@@ -3,3 +3,9 @@
   hosts: all
   roles:
     - role: ansible-role-rpi_boot_config
+      vars:
+        rpi_boot_config_reboot: false
+        boot_config_lines:
+          - "gpu_mem=196"
+          - "dtoverlay=pi3-disable-wifi"
+          - "dtoverlay=pi3-disable-bt"

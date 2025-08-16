@@ -9,3 +9,6 @@ boot_config: {}
 
 boot_config_lines: []
 #  - "gpu_mem=64"
+
+# wether to reboot if the config changed:
+rpi_boot_config_reboot: true

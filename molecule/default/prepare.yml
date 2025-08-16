@@ -4,3 +4,8 @@
   gather_facts: false
   roles:
     - role: robertdebock.bootstrap
+  tasks:
+    - name: Ensure the /boot/config.txt file is present
+      ansible.builtin.file:
+        path: /boot/config.txt
+        state: touch

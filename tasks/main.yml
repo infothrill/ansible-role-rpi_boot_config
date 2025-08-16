@@ -20,4 +20,4 @@
   ansible.builtin.reboot:
     msg: "Reboot by Ansible, because {{ rpi_boot_config_file }} config changed."
     reboot_timeout: 300   # (= 5 minutes)
-  when: _boot_config.changed or _boot_config_lines.changed
+  when: (_boot_config.changed or _boot_config_lines.changed) and rpi_boot_config_reboot

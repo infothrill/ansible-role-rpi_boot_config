@@ -3,9 +3,9 @@
 ![Build status](https://github.com/infothrill/ansible-role-rpi_boot_config/actions/workflows/tests.yml/badge.svg)
 [![Ansible Role](https://img.shields.io/ansible/role/50818.svg)](https://galaxy.ansible.com/infothrill/rpi_boot_config/)
 
-Minimal role to manage config entries in a Raspberry PI
+Minimal role to manage config entries in a Raspberry Pi
 [boot config](http://www.raspberrypi.org/documentation/configuration/config-txt.md).
-After changing the boot config, it will restart the raspberry pi and wait for
+After changing the boot config, it will restart the Raspberry Pi and wait for
 it to come back.
 
 ## Requirements
@@ -61,11 +61,10 @@ None.
 
 ## Changelog
 
-### xxxx
+### 4.4.0 TBD
 
-* add ansible 7, python 3.11
-* drop ansible 5, python 3.8
-* drop support for Debian `jessie`
+* Add new role variable `rpi_boot_config_reboot: bool`
+* Update molecule and CI testing
 
 ### 4.3.0
 
@@ -74,7 +73,7 @@ None.
 
 ### 4.2.0
 
-* moved CI to Github Actions
+* moved CI to GitHub Actions
 * drop support for ansible 2.9, python3.7
 
 ### 4.1.0

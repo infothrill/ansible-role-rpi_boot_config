@@ -5,12 +5,15 @@ lint: |
   yamllint .
   ansible-lint --exclude molecule
 platforms:
-  - name: rpibootconfig-debian-11-bullseye
-    image: debian:bullseye
-  - name: rpibootconfig-debian-buster
-    image: debian:buster
+  # since we don't need to test against the OS, one is enough here
+  - name: rpibootconfig-debian-12-bookworm
+    image: debian:bookworm
+    dockerfile: ../common/Dockerfile.j2
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      roles_path: "$ANSIBLE_ROLES_PATH:$MOLECULE_PROJECT_DIRECTORY/..:$HOME/.ansible/roles"
 scenario:
   name: default
 verifier:
