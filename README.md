@@ -1,7 +1,7 @@
 # Ansible role: rpi_boot_config
 
 ![Build status](https://github.com/infothrill/ansible-role-rpi_boot_config/actions/workflows/tests.yml/badge.svg)
-[![Ansible Role](https://img.shields.io/ansible/role/50818.svg)](https://galaxy.ansible.com/infothrill/rpi_boot_config/)
+[![Ansible Role](https://img.shields.io/ansible/role/d/infothrill/rpi_boot_config)](https://galaxy.ansible.com/infothrill/rpi_boot_config/)
 
 Minimal role to manage config entries in a Raspberry Pi
 [boot config](http://www.raspberrypi.org/documentation/configuration/config-txt.md).
