@@ -1,2 +1,7 @@
 ---
 # handlers file for rpi-boot-config
+- name: "Reboot system rpi_boot_config"
+  ansible.builtin.reboot:
+    msg: "Reboot by Ansible, because boot config changed."
+    reboot_timeout: 300   # (= 5 minutes)
+  when: rpi_boot_config_reboot

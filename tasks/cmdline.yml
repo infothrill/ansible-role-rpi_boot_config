@@ -1,0 +1,39 @@
+---
+- name: Ensure specified options are absent from cmdline.txt
+  ansible.builtin.replace:
+    path: "{{ rpi_boot_config_cmdline_path }}"
+    regexp: '(^|.*?)\b{{ item }}\b\s*(.*)'
+    replace: '\1\2'
+  loop: "{{ rpi_boot_config_cmdline_absent }}"
+  register: _remove_result
+
+- name: Check if present options already exist
+  ansible.builtin.command: "cat {{ rpi_boot_config_cmdline_path }}"
+  register: cmdline_content
+  changed_when: false
+
+- name: Ensure specified options are present in cmdline.txt
+  ansible.builtin.replace:
+    path: "{{ rpi_boot_config_cmdline_path }}"
+    regexp: '$'
+    replace: ' {{ item }}'
+  loop: "{{ rpi_boot_config_cmdline_present }}"
+  # Only append if the option isn't already anywhere in the file
+  when: item not in cmdline_content.stdout
+  register: _add_result
+
+
+- name: "Clean up double spaces and trim trailing whitespace"
+  ansible.builtin.replace:
+    path: "{{ rpi_boot_config_cmdline_path }}"
+    regexp: '( +)(?=$)|( ){2,}'
+    replace: '\2'
+# ( +)(?=$): This looks for one or more spaces at the very end of the line (using a positive lookahead (?=$)). Because it matches the first alternative, the second capture group \2 is completely empty, effectively deleting the trailing spaces.
+# ( ){2,}: This matches two or more consecutive spaces anywhere else in the line. Because it matches the second alternative, group \2 captures exactly one space, effectively replacing the multiple spaces with a single space.
+  register: _trim_result
+
+- name: "Restart machine"
+  ansible.builtin.debug:
+    msg: "Will notify reboot handler conditionally"
+  notify: "Reboot system rpi_boot_config"
+  when: (_remove_result.changed or _add_result.changed or _trim_result.changed) and rpi_boot_config_reboot

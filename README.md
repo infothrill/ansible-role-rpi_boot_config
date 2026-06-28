@@ -5,7 +5,7 @@
 
 Minimal role to manage config entries in a Raspberry Pi
 [boot config](http://www.raspberrypi.org/documentation/configuration/config-txt.md).
-After changing the boot config, it will restart the Raspberry Pi and wait for
+After changing the boot config, it can restart the Raspberry Pi and wait for
 it to come back.
 
 ## Requirements
@@ -38,14 +38,44 @@ boot_config:
     gpu_mem: '196'
 ```
 
-**rpi\_boot\_config\_file**, optional
+**rpi\_boot\_config\_path**, optional
 
 Path of the Raspberry Pi boot configuration file to manage, default:
-`/boot/config.txt`.
+`/boot/firmware/config.txt`.
 Example:
 
 ```yaml
-rpi_boot_config_file: /boot/config.txt
+rpi_boot_config_path: /boot/firmware/config.txt
+```
+
+**rpi\_boot\_config\_cmdline\_path**, optional
+
+Path of the Raspberry Pi kernel command line configuration file to manage, default:
+`/boot/firmware/cmdline.txt`.
+Example:
+
+```yaml
+rpi_boot_config_cmdline_path: /boot/firmware/cmdline.txt
+```
+
+**rpi\_boot\_config\_cmdline\_present**, optional
+
+Command line argument to be present, default: `[]`.
+Example:
+
+```yaml
+rpi_boot_config_cmdline_present:
+    - "usb-storage.quirks=152d:0578:u"
+```
+
+**rpi\_boot\_config\_cmdline\_absent**, optional
+
+Command line argument to be absent, default: `[]`.
+Example:
+
+```yaml
+rpi_boot_config_cmdline_absent:
+    - "music=loud"
 ```
 
 **rpi\_boot\_config\_reboot**, optional
@@ -72,6 +102,11 @@ None.
 ```
 
 ## Changelog
+
+### 4.5.0
+
+* Add `rpi_boot_config_cmdline_path`, `rpi_boot_config_cmdline_present` and `rpi_boot_config_cmdline_absent`
+* Deprecate `rpi_boot_config_file`, use `rpi_boot_config_path` instead
 
 ### 4.4.0
 

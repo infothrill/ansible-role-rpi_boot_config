@@ -9,3 +9,7 @@
           - "gpu_mem=196"
           - "dtoverlay=pi3-disable-wifi"
           - "dtoverlay=pi3-disable-bt"
+        rpi_boot_config_cmdline_present:
+          - "fsck.repair=yes"
+        rpi_boot_config_cmdline_absent:
+          - "music=loud"

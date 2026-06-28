@@ -2,7 +2,9 @@
 # defaults for rpi-boot-config
 
 # Path to the Raspberry Pi boot configuration file
-rpi_boot_config_file: /boot/config.txt
+rpi_boot_config_file: /boot/firmware/config.txt
+rpi_boot_config_path: "{{ rpi_boot_config_file }}"
+rpi_boot_config_cmdline_path: /boot/firmware/cmdline.txt
 
 boot_config: {}
 #  gpu_mem: 64
@@ -12,3 +14,7 @@ boot_config_lines: []
 
 # wether to reboot if the config changed:
 rpi_boot_config_reboot: true
+
+# cmdline options:
+rpi_boot_config_cmdline_present: []
+rpi_boot_config_cmdline_absent: []

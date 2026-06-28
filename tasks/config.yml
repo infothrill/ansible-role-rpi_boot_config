@@ -1,0 +1,23 @@
+---
+# tasks file for config.txt
+- name: "Adjust {{ rpi_boot_config_path }}"
+  ansible.builtin.lineinfile:
+    line: '{{ item.key }}={{ item.value }}'
+    dest: "{{ rpi_boot_config_path }}"
+    regexp: "^{{ item.key }}="
+  with_dict: '{{ boot_config }}'
+  register: _boot_config
+
+- name: "Adjust {{ rpi_boot_config_path }}"
+  ansible.builtin.lineinfile:
+    line: '{{ item }}'
+    dest: "{{ rpi_boot_config_path }}"
+    regexp: "^{{ item }}"
+  with_items: '{{ boot_config_lines }}'
+  register: _boot_config_lines
+
+- name: "Restart machine"
+  ansible.builtin.debug:
+    msg: "Will notify reboot handler conditionally"
+  notify: "Reboot system rpi_boot_config"
+  when: (_boot_config.changed or _boot_config_lines.changed) and rpi_boot_config_reboot
