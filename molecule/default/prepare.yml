@@ -5,7 +5,11 @@
   roles:
     - role: robertdebock.bootstrap
   tasks:
-    - name: Ensure the /boot/config.txt file is present
+    - name: Ensure the /boot/firmware/config.txt file is present
       ansible.builtin.file:
-        path: /boot/config.txt
+        path: /boot/firmware/config.txt
+        state: touch
+    - name: Ensure the /boot/firmware/cmdline.txt file is present
+      ansible.builtin.file:
+        path: /boot/firmware/cmdline.txt
         state: touch
