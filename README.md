@@ -18,7 +18,7 @@ Available variables are listed below, along with default values (see defaults/ma
 
 **boot\_config\_lines**, optional
 
-List of verbatim config lines to be put into `/boot/config.txt` (no assertions
+List of verbatim config lines to be put into `/boot/firmware/cmdline.txt` (no assertions
 about uniqueness are made). Example:
 
 ```yaml
@@ -30,7 +30,7 @@ boot_config_lines:
 
 **boot\_config**, optional
 
-Dictionary where every key translates to a unique setting in `/boot/config.txt`.
+Dictionary where every key translates to a unique setting in `/boot/firmware/cmdline.txt`.
 Example:
 
 ```yaml
@@ -82,7 +82,6 @@ rpi_boot_config_cmdline_absent:
 
 Boolean to specify if a reboot should be performed if the config changes
 (default: true).
-`/boot/config.txt`.
 Example:
 
 ```yaml
