@@ -14,6 +14,10 @@ provisioner:
   config_options:
     defaults:
       roles_path: "$ANSIBLE_ROLES_PATH:$MOLECULE_PROJECT_DIRECTORY/..:$HOME/.ansible/roles"
+  env:
+    # https://github.com/ansible-community/molecule-plugins/
+    # until molecule-docker has a new release, we need to do this:
+    ANSIBLE_ALLOW_BROKEN_CONDITIONALS: "True"
 scenario:
   name: default
 verifier:
