@@ -7,19 +7,20 @@
   loop: "{{ rpi_boot_config_cmdline_absent }}"
   register: _remove_result
 
-- name: Check if present options already exist
-  ansible.builtin.command: "cat {{ rpi_boot_config_cmdline_path }}"
-  register: cmdline_content
-  changed_when: false
+- name: Read the current cmdline.txt content
+  ansible.builtin.slurp:
+    src: "{{ rpi_boot_config_cmdline_path }}"
+  register: cmdline_txt
 
 - name: Ensure specified options are present in cmdline.txt
-  ansible.builtin.replace:
+  ansible.builtin.lineinfile:
     path: "{{ rpi_boot_config_cmdline_path }}"
-    regexp: '$'
-    replace: ' {{ item }}'
+    regexp: '^(.*)$'
+    line: '\1 {{ item | trim }}'
+    backrefs: true
   loop: "{{ rpi_boot_config_cmdline_present }}"
   # Only append if the option isn't already anywhere in the file
-  when: item not in cmdline_content.stdout
+  when: item not in cmdline_txt.content|b64decode
   register: _add_result
 
 

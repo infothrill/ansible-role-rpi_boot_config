@@ -9,11 +9,14 @@
       ansible.builtin.file:
         path: /boot/firmware/
         state: directory
+        mode: '0755'
     - name: Ensure the /boot/firmware/config.txt file is present
       ansible.builtin.file:
         path: /boot/firmware/config.txt
         state: touch
+        mode: '0644'
     - name: Ensure the /boot/firmware/cmdline.txt file is present
       ansible.builtin.file:
         path: /boot/firmware/cmdline.txt
         state: touch
+        mode: '0644'
